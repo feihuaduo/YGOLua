@@ -12,4 +12,4 @@
 6.一键注释<br>
 7.高效的选择和编辑功能<br>
 8.手势缩放<br>
-![screen1.jpg](https://github.com/2487686673/Syntax-Highlighting-Editor/blob/master/img/S20117-14481359.png)
+![screen1.jpg](https://github.com/feihuaduo/YGOLua/blob/master/img/S20117-14481359.png)
