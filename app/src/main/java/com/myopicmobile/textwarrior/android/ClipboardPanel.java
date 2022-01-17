@@ -172,7 +172,7 @@ public class ClipboardPanel {
             log("ch2:" + ch);
             char nextCh = documentProvider.charAt(rowStart + offset + 1);
             log("nextCh2:" + nextCh);
-            if (ch == '-' && nextCh == '-') {
+            if (ch == '/' && nextCh == '/') {
                 documentProvider.deleteAt(rowStart + offset, System.nanoTime());
                 documentProvider.deleteAt(rowStart + offset, System.nanoTime());//删除一个‘/’后，第二个'/'的位置变成了原来第一个的位置
                 _textField.respan();
