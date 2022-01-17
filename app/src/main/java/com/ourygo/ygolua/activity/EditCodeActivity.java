@@ -1,17 +1,24 @@
-package com.dream.highlighteditor.activity;
+package com.ourygo.ygolua.activity;
 
-import android.content.*;
-import android.os.*;
-import android.view.*;
-import android.widget.*;
-import androidx.annotation.*;
-import androidx.appcompat.app.*;
-import androidx.appcompat.widget.*;
-import com.dream.highlighteditor.*;
-import com.dream.highlighteditor.editor.*;
-import com.dream.highlighteditor.view.*;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.myopicmobile.textwarrior.common.JavaLexer;
+import com.ourygo.ygolua.editor.TextEditor;
+import com.ourygo.ygolua.view.SymbolView;
+import com.ourygo.ygolua.R;
 
 /*
  项目名：代码笔记
@@ -53,16 +60,15 @@ public class EditCodeActivity extends AppCompatActivity {
         View rootView = getWindow().getDecorView();
         sv = new SymbolView(this, rootView);
         sv.setVisible(true);
-        sv.setOnSymbolViewClick(new SymbolView.OnSymbolViewClick() {
-				@Override
-				public void onClick(View view, String text) {
-					if (text.equals("→")) {
-						content_edit.paste("\t");
-					} else {
-						content_edit.paste(text);
-					}
-				}
-			});
+        sv.setOnSymbolViewClick((view, text,isMoveLeft) -> {
+//					if (text.equals("→")) {
+//						content_edit.paste("\t");
+//					} else {
+                content_edit.paste(text);
+                if (isMoveLeft)
+                    content_edit.moveCaretLeft();
+//					}
+        });
     }
 
     //菜单事件监听

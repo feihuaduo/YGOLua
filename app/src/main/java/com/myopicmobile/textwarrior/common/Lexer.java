@@ -27,6 +27,7 @@ public class Lexer implements JavaTokenTypes {
 	public final static int NUMBER = 4;
     public final static int DATATYPE=5;
     public final static int YSF=6;
+    public final static int CONSTANT=7;
 	/** A word that starts with a special symbol, inclusive.
 	 * Examples:
 	 * :ruby_symbol

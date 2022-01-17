@@ -1,4 +1,4 @@
-package com.dream.highlighteditor.editor;
+package com.ourygo.ygolua.editor;
 
 import android.annotation.*;
 import android.content.*;
@@ -46,7 +46,7 @@ public class TextEditor extends FreeScrollingTextField {
         //设置自动缩进宽度
         setAutoIndentWidth(4);
         //设置语言
-        Lexer.setLanguage(LanguageJava.getInstance());
+        Lexer.setLanguage(LanguageLua.getInstance());
         setNavigationMethod(new YoyoNavigationMethod(this));
         int textColor = Color.BLACK;// 默认文字颜色
         int selectionText = Color.argb(255, 0, 120, 215);//选择文字颜色
@@ -72,18 +72,17 @@ public class TextEditor extends FreeScrollingTextField {
             setColorScheme(new ColorSchemeLight());
     }
 
-    public void addNames(String[] names) {
-        LanguageJava lang = (LanguageJava) Lexer.getLanguage();
-        String[] old = lang.getNames();
-        String[] news = new String[old.length + names.length];
-        System.arraycopy(old, 0, news, 0, old.length);
-        System.arraycopy(names, 0, news, old.length, names.length);
-        lang.setNames(news);
-        Lexer.setLanguage(lang);
-        respan();
-        invalidate();
-
-    }
+//    public void addNames(String[] names) {
+//        LanguageJava lang = (LanguageJava) Lexer.getLanguage();
+//        String[] old = lang.getNames();
+//        String[] news = new String[old.length + names.length];
+//        System.arraycopy(old, 0, news, 0, old.length);
+//        System.arraycopy(names, 0, news, old.length, names.length);
+//        lang.setNames(news);
+//        Lexer.setLanguage(lang);
+//        respan();
+//        invalidate();
+//    }
 
     public void setPanelBackgroundColor(int color) {
         // TODO: Implement this method
@@ -225,7 +224,6 @@ public class TextEditor extends FreeScrollingTextField {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-
                 case ReadThread.MSG_READ_OK:
                     setText(msg.obj.toString());
                     break;

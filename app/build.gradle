@@ -3,11 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.dream.highlighteditor"
+        applicationId "com.ourygo.ygolua"
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 21
-        versionName '1.2.1'
+        targetSdkVersion 21
+        versionCode 1
+        versionName '1.0'
     }
     buildTypes {
         release {
@@ -15,9 +15,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-	implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.github.feihuaduo:DialogUtils:1.8.9.14'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 }

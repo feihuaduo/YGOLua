@@ -75,7 +75,8 @@ import com.myopicmobile.textwarrior.common.Document;
 import com.myopicmobile.textwarrior.common.DocumentProvider;
 import com.myopicmobile.textwarrior.common.Language;
 import com.myopicmobile.textwarrior.common.LanguageCFamily;
-import com.myopicmobile.textwarrior.common.LanguageJava;
+
+import com.myopicmobile.textwarrior.common.LanguageLua;
 import com.myopicmobile.textwarrior.common.Lexer;
 import com.myopicmobile.textwarrior.common.Pair;
 import com.myopicmobile.textwarrior.common.RowListener;
@@ -406,7 +407,7 @@ public class FreeScrollingTextField extends View implements Document.TextFieldMe
 		resetView();
 		_clipboardPanel=new ClipboardPanel(this);
 		_autoCompletePanel=new AutoCompletePanel(this);
-        AutoCompletePanel.setLanguage(LanguageJava.getInstance());
+        AutoCompletePanel.setLanguage(LanguageLua.getInstance());
 		//TODO find out if this function works
 		//setScrollContainer(true);
 		invalidate();

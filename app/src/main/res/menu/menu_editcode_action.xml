@@ -14,7 +14,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/copycode"
-        android:title="复制代码片段"
+        android:title="复制代码"
         app:showAsAction="never" />
 </menu>
 
